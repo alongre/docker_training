@@ -1,26 +1,19 @@
 /* eslint-disable import/export */
 
-import { render } from "@testing-library/react";
-
+import { render } from '@testing-library/react';
 
 const customRender = (ui: any, options = {}) =>
+	render(ui, {
+		// wrap provider(s) here if needed
 
-  render(ui, {
+		wrapper: ({ children }) => children,
 
-    // wrap provider(s) here if needed
+		...options,
+	});
 
-    wrapper: ({ children }) => children,
+export * from '@testing-library/react';
 
-    ...options,
-
-  });
-
-
-
-
-export * from "@testing-library/react";
-
-export { default as userEvent } from "@testing-library/user-event";
+export { default as userEvent } from '@testing-library/user-event';
 
 // override render export
 
