@@ -6,4 +6,4 @@ before_install:
   - docker build -t alongre/docker-training -f Dockerfile.dev .
 
 script:
-  - docker run alongre/docker-training npm run test -- --coverage
+  - docker run alongre/docker-training npm run coverage
