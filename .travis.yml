@@ -7,3 +7,14 @@ before_install:
 
 script:
   - docker run alongre/docker-training npm run coverage
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-2'
+  app: 'docker-training'
+  env: 'Dockertraining-env'
+  bucket_name: 'elasticbeanstalk-us-east-2-896902245140'
+  buckeet_path: 'docker-training'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
